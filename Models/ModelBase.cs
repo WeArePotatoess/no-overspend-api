@@ -1,8 +1,11 @@
-﻿namespace No_Overspend_Api.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace No_Overspend_Api.Models
 {
     public abstract class ModelBase
     {
-        public string id { get; set; } = Guid.NewGuid().ToString();
+        [Key]
+        public virtual string id { get; set; } = Guid.NewGuid().ToString();
         public DateTime created_at { get; set; } = DateTime.UtcNow;
         public DateTime? updated_at { get; set; }
         public DateTime? deleted_at { get; set; }

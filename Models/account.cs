@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace No_Overspend_Api.Models
 {
     [Table("accounts")]
-    public class account
+    public class account : ModelBase
     {
         public string email { get; set; } = null!;
         public string password_hashed { get; set; } = null!;

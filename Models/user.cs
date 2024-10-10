@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace No_Overspend_Api.Models
 {
-    public class user
+    public class user : ModelBase
     {
         public string account_id { get; set; } = null!;
         public string fullname { get; set; } = null!;
