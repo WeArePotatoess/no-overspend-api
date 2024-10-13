@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace No_Overspend_Api.Models
+namespace No_Overspend_Api.Infra.Models
 {
     [Table("app_settings")]
     public class app_setting : ModelBase

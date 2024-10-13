@@ -1,5 +1,5 @@
 ﻿using Microsoft.IdentityModel.Tokens;
-using No_Overspend_Api.Models;
+using No_Overspend_Api.Infra.Models;
 using System.Diagnostics.Metrics;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;

@@ -1,4 +1,4 @@
-﻿namespace No_Overspend_Api.Constants
+﻿namespace No_Overspend_Api.Infra.Constants
 {
     public static class ErrorMessages
     {

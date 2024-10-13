@@ -2,8 +2,8 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using No_Overspend_Api;
+using No_Overspend_Api.Infra.Models;
 using No_Overspend_Api.Middlewares;
-using No_Overspend_Api.Models;
 using System.Text;
 
 

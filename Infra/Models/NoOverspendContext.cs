@@ -2,7 +2,7 @@
 using Microsoft.IdentityModel.Abstractions;
 using System.Linq.Expressions;
 
-namespace No_Overspend_Api.Models
+namespace No_Overspend_Api.Infra.Models
 {
     public class NoOverspendContext : DbContext
     {
@@ -15,6 +15,7 @@ namespace No_Overspend_Api.Models
         public DbSet<notification> notifications { get; set; } = null!;
         public DbSet<saving> savings { get; set; } = null!;
         public DbSet<transaction> transactions { get; set; } = null!;
+        public DbSet<role> roles { get; set; } = null!;
 
         public NoOverspendContext(DbContextOptions<NoOverspendContext> options) : base(options) { }
 
@@ -30,6 +31,7 @@ namespace No_Overspend_Api.Models
             modelBuilder.ApplyConfiguration(new notification_configuration());
             modelBuilder.ApplyConfiguration(new saving_configuration());
             modelBuilder.ApplyConfiguration(new transaction_configuration());
+            modelBuilder.ApplyConfiguration(new role_configuration());
 
 
             foreach (var entityType in modelBuilder.Model.GetEntityTypes())

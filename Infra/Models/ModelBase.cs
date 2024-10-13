@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace No_Overspend_Api.Models
+namespace No_Overspend_Api.Infra.Models
 {
     public abstract class ModelBase
     {

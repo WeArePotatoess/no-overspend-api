@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace No_Overspend_Api.Models
+namespace No_Overspend_Api.Infra.Models
 {
     public class user : ModelBase
     {

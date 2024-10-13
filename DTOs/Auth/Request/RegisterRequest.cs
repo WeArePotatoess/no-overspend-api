@@ -1,4 +1,4 @@
-﻿using No_Overspend_Api.Constants;
+﻿using No_Overspend_Api.Infra.Constants;
 using System.ComponentModel.DataAnnotations;
 
 namespace No_Overspend_Api.DTOs.Auth.Request
