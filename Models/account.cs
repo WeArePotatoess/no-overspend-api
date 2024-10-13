@@ -13,7 +13,9 @@ namespace No_Overspend_Api.Models
         public string? refresh_token { get; set; }
         public string? security_pin { get; set; }
         public string user_id { get; set; } = null!;
+        public string role_id { get; set; } = null!;
         public user user { get; set; } = null!;
+        public role role { get; set; } = null!;
     }
     public class account_configuration : IEntityTypeConfiguration<account>
     {
@@ -22,6 +24,10 @@ namespace No_Overspend_Api.Models
             builder.HasOne(e => e.user)
                 .WithOne(e => e.account)
                 .HasForeignKey<account>(e => e.user_id)
+                .IsRequired();
+            builder.HasOne(e => e.role)
+                .WithMany()
+                .HasForeignKey(e => e.role_id)
                 .IsRequired();
         }
     }

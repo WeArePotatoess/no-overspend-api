@@ -1,8 +1,11 @@
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
+using No_Overspend_Api;
+using No_Overspend_Api.Middlewares;
 using No_Overspend_Api.Models;
 using System.Text;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -29,6 +32,9 @@ builder.Services.AddDbContext<NoOverspendContext>(options =>
 {
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
 });
+// Add Services
+builder.Services.AddServices();
+
 
 var app = builder.Build();
 
@@ -38,6 +44,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+app.UseMiddleware<HttpExceptionHandler>();
 
 app.UseHttpsRedirection();
 
