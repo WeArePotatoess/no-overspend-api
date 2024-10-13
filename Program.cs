@@ -4,6 +4,7 @@ using Microsoft.IdentityModel.Tokens;
 using No_Overspend_Api;
 using No_Overspend_Api.Infra.Models;
 using No_Overspend_Api.Middlewares;
+using No_Overspend_Api.Util;
 using System.Text;
 
 
@@ -34,6 +35,7 @@ builder.Services.AddDbContext<NoOverspendContext>(options =>
 });
 // Add Services
 builder.Services.AddServices();
+builder.Services.AddAutoMapper(typeof(MappingProfile).Assembly);
 
 
 var app = builder.Build();
