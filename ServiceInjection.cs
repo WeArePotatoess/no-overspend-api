@@ -15,6 +15,7 @@ namespace No_Overspend_Api
             services.AddScoped<ISavingService, SavingService>();
             services.AddScoped<ITransactionService, TransactionService>();
             services.AddScoped<IUserService, UserService>();
+            services.AddScoped<IMailService, MailService>();
         }
     }
 }
