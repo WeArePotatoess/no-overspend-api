@@ -12,12 +12,15 @@ namespace No_Overspend_Api.Infra.Models
         public decimal amount { get; set; }
         public int type { get; set; }
         public DateTime transaction_date { get; set; }
+        public string title { get; set; } = null!;
+        public string? message { get; set; }
+        public category category { get; set; } = null!;
     }
     public class transaction_configuration : IEntityTypeConfiguration<transaction>
     {
         public void Configure(EntityTypeBuilder<transaction> builder)
         {
-
+            builder.HasOne(e => e.category).WithMany().HasForeignKey(e => e.category_id);
         }
     }
 }

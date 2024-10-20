@@ -10,7 +10,6 @@ namespace No_Overspend_Api.Infra.Models
         public string phone { get; set; } = null!;
         public DateTime dob { get; set; }
         public decimal total_balance { get; set; } = 0;
-        public decimal total_expense { get; set; } = 0;
         public account account { get; set; } = null!;
         public ICollection<notification> notifications { get; set; } = null!;
     }

@@ -14,12 +14,13 @@ namespace No_Overspend_Api.Infra.Models
         public string icon_id { get; set; } = null!;
         public DateTime from_date { get; set; }
         public DateTime to_date { get; set; }
+        public icon icon { get; set; } = null!;
     }
     public class saving_configuration : IEntityTypeConfiguration<saving>
     {
         public void Configure(EntityTypeBuilder<saving> builder)
         {
-
+            builder.HasOne(e => e.icon).WithMany().HasForeignKey(e => e.icon_id);
         }
     }
 }

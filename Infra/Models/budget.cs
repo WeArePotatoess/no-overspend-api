@@ -12,12 +12,13 @@ namespace No_Overspend_Api.Infra.Models
         public decimal amount { get; set; }
         public DateTime from_date { get; set; }
         public DateTime to_date { get; set; }
+        public category category { get; set; } = null!;
     }
     public class budget_configuration : IEntityTypeConfiguration<budget>
     {
         public void Configure(EntityTypeBuilder<budget> builder)
         {
-
+            builder.HasOne(e => e.category).WithMany().HasForeignKey(e => e.category_id);
         }
     }
 }
