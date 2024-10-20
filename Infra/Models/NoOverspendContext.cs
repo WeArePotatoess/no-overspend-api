@@ -33,6 +33,19 @@ namespace No_Overspend_Api.Infra.Models
             modelBuilder.ApplyConfiguration(new transaction_configuration());
             modelBuilder.ApplyConfiguration(new role_configuration());
 
+            modelBuilder.Entity<role>().HasData(
+                new role
+                {
+                    name = "ADMIN",
+                    description = "Admin hệ thống"
+                },
+                new role
+                {
+                    name = "USER",
+                    description = "Người dùng sử dụng ứng dụng"
+                }
+                );
+
 
             foreach (var entityType in modelBuilder.Model.GetEntityTypes())
             {

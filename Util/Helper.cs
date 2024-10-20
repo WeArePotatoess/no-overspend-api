@@ -1,8 +1,10 @@
-﻿using Microsoft.IdentityModel.Tokens;
+﻿using BCrypt.Net;
+using Microsoft.IdentityModel.Tokens;
 using No_Overspend_Api.Infra.Models;
 using System.Diagnostics.Metrics;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
+using System.Security.Cryptography;
 using System.Text;
 
 namespace No_Overspend_Api.Util
@@ -28,6 +30,23 @@ namespace No_Overspend_Api.Util
                 );
             var jwt = new JwtSecurityTokenHandler().WriteToken(token);
             return jwt;
+        }
+        public static string HashPassword(string password)
+        {
+            return BCrypt.Net.BCrypt.HashPassword(password);
+        }
+        public static bool Verify(string input, string hashedString)
+        {
+            return BCrypt.Net.BCrypt.Verify(input, hashedString);
+        }
+        public static string GenerateResetPasswordToken()
+        {
+            byte[] tokenData = new byte[32];
+            using (var rng = RandomNumberGenerator.Create())
+            {
+                rng.GetBytes(tokenData);
+            }
+            return Convert.ToBase64String(tokenData);
         }
     }
 }
