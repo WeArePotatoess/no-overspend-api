@@ -7,7 +7,7 @@ namespace No_Overspend_Api.Infra.Models
         [Key]
         public virtual string id { get; set; } = Guid.NewGuid().ToString();
         public DateTime created_at { get; set; } = DateTime.UtcNow;
-        public DateTime? updated_at { get; set; }
+        public DateTime updated_at { get; set; } = DateTime.UtcNow;
         public DateTime? deleted_at { get; set; }
         public bool deleted { get; set; } = false;
     }
