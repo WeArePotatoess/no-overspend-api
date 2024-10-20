@@ -1,5 +1,4 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using No_Overspend_Api.DTOs.Balance.Request;
 using No_Overspend_Api.HttpExceptions;
 using No_Overspend_Api.Infra.Constants;
 using No_Overspend_Api.Infra.Models;

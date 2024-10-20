@@ -74,7 +74,6 @@ namespace No_Overspend_Api.Services
                 fullname = request.fullname,
                 phone = request.phone,
                 total_balance = 0,
-                total_expense = 0,
             };
 
             var secretKey = _configuration["KeyHeaderToken:SecretKey"];
@@ -119,10 +118,10 @@ namespace No_Overspend_Api.Services
                     await transaction.CommitAsync();
                     return true;
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
                     await transaction.RollbackAsync();
-                    throw ex;
+                    throw;
                 }
             }
         }

@@ -22,7 +22,7 @@ namespace No_Overspend_Api.Base
                         email = User.FindFirst(ClaimTypes.Email)?.Value ?? "",
                     };
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
                     return new UserHeader();
                 }

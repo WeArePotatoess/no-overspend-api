@@ -47,10 +47,10 @@ namespace No_Overspend_Api.Services
                     await _context.SaveChangesAsync();
                     return newTransaction.id;
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
                     await transaction.RollbackAsync();
-                    throw ex;
+                    throw;
                 }
             }
         }
@@ -70,10 +70,10 @@ namespace No_Overspend_Api.Services
                     await _transaction.CommitAsync();
                     return true;
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
                     await _transaction.RollbackAsync();
-                    throw ex;
+                    throw;
                 }
             }
         }
@@ -138,10 +138,10 @@ namespace No_Overspend_Api.Services
                     await _transaction.CommitAsync();
                     return true;
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
                     await _transaction.RollbackAsync();
-                    throw ex;
+                    throw;
                 }
             }
         }

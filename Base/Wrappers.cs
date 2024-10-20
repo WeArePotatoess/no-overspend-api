@@ -27,7 +27,7 @@ namespace No_Overspend_Api.Base
 
     public class ExtendedPageResponse<T> : PagedResponse<T>
     {
-        public object? metadata { get; set; };
+        public object? metadata { get; set; }
     }
     public class Paging
     {
